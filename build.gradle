@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.4'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+    id 'idea'
+    // protobuf plugin
+    id 'com.google.protobuf' version '0.8.19'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+apply from: 'grpc.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // grpc server
+    implementation 'net.devh:grpc-server-spring-boot-starter:2.13.1.RELEASE'
+}

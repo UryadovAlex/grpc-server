@@ -1,10 +1,10 @@
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.7.1"
+        artifact = "com.google.protobuf:protoc:3.21.7"
     }
     plugins {
         grpc {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.19.0"
+            artifact = "io.grpc:protoc-gen-grpc-java:1.51.0"
         }
     }
     generateProtoTasks {
@@ -32,10 +32,8 @@ task cleanProtoGen {
 // Optional
 idea {
     module {
-        sourceDirs += file("src/generated/main/java")
-        sourceDirs += file("src/generated/main/grpc")
-        generatedSourceDirs += file("src/generated/main/java")
-        generatedSourceDirs += file("src/generated/main/grpc")
+        sourceDirs += file("/src/main/proto_gen")
+        generatedSourceDirs += file("/src/main/proto_gen")
     }
 }
 
